@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- Michael Pavlakis
+ET 710
+
+Homework Assignment 3
+CunyWebWorkshops -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lists, Tables and Forms</title>
+		<link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+		<style type="text/css">
+	 		body {
+					text-align:center;
+	 				font-family: 'Titan+One', sans-serif;
+	 				font-size: 1em;
+	 				color: #000000;
+	 				background-color: #c6d1f4;
+	         }
+		 form {
+		     clear:both;
+		     max-width:150%;
+		     margin:0 auto;
+		     display:inline-block;
+		     font-family: 'Titan+One', sans-serif;
+		     text-align:center;
+		 }
+	 		h1 {
+	 				color: #ffffff;
+	         background-color: #01144f;
+	         margin: -10px -10px 20px -10px;
+	         padding: 20px;
+	         }
+
+	 		li {
+	 				line-height: 2em;
+	         }
+
+	    table {
+				  margin-left:auto;
+	        margin-right:auto;
+	   			border-spacing: 0px;
+	   			border: 1px solid #01144f;
+	         }
+
+	   		th, td {
+	   			padding: 10px 20px;
+	   			text-align: center;
+	   			background-color: #9bb0ef;
+	   			border: 1px solid #01144f;
+	         color:#01144f;
+	         }
+
+	   		tr.head th {
+	   			color: #ffffff;
+	   			background-color: #01144f;
+	   			border: 1px solid #ffffff;
+	   			text-align: center;
+	         }
+
+	       tr, th.left {
+	   			color: #ffffff;
+	   			background-color:#01144f;
+	   			border-bottom: 1px solid #ffffff;
+	   			text-align: center;
+	         }
+
+	       tr, th.left_last {
+	         color: #ffffff;
+	   			background-color:#01144f;
+	   			border-bottom: 1px solid #01144f;
+	   			text-align: center;
+	         }
+
+	   		tr.even td {
+	   			background-color: #b4c5f7;
+	         }
+
+	       tr:hover td {
+	   		background-color: #114af7;
+	   				}
+
+	   		fieldset {
+	   			width: 400px;
+	   			margin-top: 20px;
+	   			border: 1px solid #01144f;
+	   			background-color:#01144f;
+	   			line-height: 2em;
+	       }
+
+	   		legend {
+	   			color: #ffffff;
+	         background-color: #01144f;
+	         font-size: 1.2em;
+	         font-weight: bold;
+	         padding: 10px 20px;
+	         width: 450px;
+	         border: 1px solid #01144f;
+	       }
+
+	       label	{
+	   			color:#ffffff;
+	       }
+
+	       input[type="submit"] {
+	         border: 1px solid #ffffff;
+	         background-color: #114af7;
+	         color: #ffffff;
+	         border-radius: 5px;
+	         padding: 10px 20px;
+	         margin-top: 10px;
+	         font-size: 1.5em;
+	       }
+
+	       input[type="submit"]:hover {
+	         border: 1px solid #01144f;
+	         background-color: #9bb0ef;
+	         color: #01144f;
+	         cursor: pointer;
+	       }
+
+	       input[type="text"] {
+	   			width: 350px;
+	   			border: 1px solid #d1e8f9;
+	   			padding: 5px;
+	   			outline: none;
+	       }
+
+	   		input[type="text"]:focus,
+	   		input[type="text"]:hover {
+	   			background-color: #9bb0ef;
+	   			border: 1px solid #a09d9d;
+	       }
+
+	       input[type="email"] {
+	         width: 350px;
+	         border: 1px solid #d1e8f9;
+	         padding: 5px;
+	         outline: none;
+	       }
+
+	       input[type="email"]:focus,
+	       input[type="email"]:hover {
+	         background-color: #b4c5f7;
+	         border: 1px solid #a09d9d;
+	       }
+	   	</style>
+	   </head>
+	   <body>
+	 	<h1>Welcome To The Cuny Web Workshops Page</h1>
+	 	<p>We wil be conducting a number of Web workshops to alert the college community.</p>
+	 	<p>Please note that the following events are free to members:</p>
+	 	<ul>
+	 		<li>HTML 5 Seminar</li>
+	 		<li>CSS Seminar</li>
+	 		<li>Bootstrap Seminar</li>
+	 		<li>Portfolio Seminar</li>
+	 	</ul>
+	   <table>
+	     <tr class="head">
+	       <th>Seminars</th>
+	       <th>LaGuardia</th>
+	       <th>QCC</th>
+	       <th>CCNY</th>
+	     </tr>
+	     <tr>
+	       <th class="left">HTML5</th>
+	       <td>Wed, 5 Dec<br />12PM - 3PM</td>
+	       <td>Tues, 11 Dec<br />1PM - 4PM</td>
+	       <td>Mon, 10 Dec<br />1PM - 4PM</td>
+	     </tr>
+	     <tr class="even">
+	       <th class="left">CSS</th>
+	       <td>Sat, 8 Dec<br />12PM - 3PM</td>
+	       <td>Thurs, 6 Dec<br />11AM - 2PM</td>
+	       <td>N/A<br /></td>
+	     </tr>
+	     <tr>
+	       <th class="left">Photoshop</th>
+	       <td>N/A<br /></td>
+	       <td>N/A<br /></td>
+	       <td>Fri, Dec 7<br />2PM - 5PM</td>
+	     </tr>
+	     <tr class="even">
+	       <th class="left_last">Bootstrap</th>
+	       <td>Sat, 8 Dec<br />12PM - 3PM</td>
+	       <td>Mon, 10 Dec<br />11AM - 2PM</td>
+	       <td>Wed, 5 Dec<br />1PM - 4PM</td>
+	     </tr>
+	   </table><br />
+	 	<form>
+	 		<fieldset>
+	 			<legend>Register For Your Web Workshop</legend><br />
+	 			<label>Name: <input type="text" name="name" size="30" maxlength="100"></label><br /><br />
+	 			<label>Email: <input type="email" name="email" size="30" maxlength="100"></label><br /><br />
+	 			<label>College:</label>
+	 			<select name="college">
+	 				<option value="laguardia">LaGuardia</option>
+	 				<option value="qcc">QCC</option>
+	 				<option value="cuny">Cuny</option>
+	 			</select><br /><br />
+	 			<label>Are you a member?</label>
+	 			<label><input type="radio" name="member" value="yes"> Yes</label>
+	 			<label><input type="radio" name="member" value="no"> No</label><br /><br />
+	 			<input type="submit" value="Register"><br />
+	 		</fieldset>
+	 	</form>
+	   </body>
+	 </html>

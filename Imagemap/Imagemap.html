@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Imagemap</title>
+<style>
+	img[usemap]{
+	border: none;
+	height: auto;
+	max-width: 100%;
+	width: auto;}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>St. Andrews Links</h1>
+    <h2></h2>
+    <p></p>
+  </header>
+<main><img src="standrews.jpg" alt="" width="1569" height="1533" usemap="#Map"/>
+  <map name="Map">
+    
+    
+    
+    <area shape="poly" coords="542,285,804,416,708,570,603,491" href="https://www.standrews.com/Play/Courses/Eden-Course" target="new" title="Eden Course">
+    <area shape="rect" coords="365,645,442,787" href="https://www.standrews.com/Play/Courses/Balgove-Course" target="new" title="Balgove Course">
+    <area shape="rect" coords="394,385,547,598" href="https://www.standrews.com/Play/Courses/Strathtyrum-Course" target="new" title="Strathtyrum Course">
+    <area shape="poly" coords="798,558,700,684,632,804,629,857,740,732,814,472,871,505,888,400,876,393,843,404,833,583,927,356,978,356,1011,355,1034,375,1008,356" href="https://www.standrews.com/Play/Courses/Old-Course" target="new" title="Old Course">
+    <area shape="poly" coords="852,634,704,807,760,841,890,732,918,585,985,708,1012,544,1074,484,1139,559,1084,348,1181,440,1070,596" href="https://www.standrews.com/Play/Courses/New-Course" target="new" title="New Course">
+    <area shape="poly" coords="1315,359,1170,540,1197,685,1360,462,1004,712,1025,759,832,823,912,836,1327,374,1339,418,1337,453,1316,466,1287,488,1246,521,1217,534,1199,555,1109,708,1102,722,1082,719,1062,748,1050,728,1034,759,717,911,729,952,641,998,775,936,686,1005,618,985,812,910,516,1082,1016,818,520,1067,539,1099,1019,816" href="https://www.standrews.com/Play/Courses/Jubilee-Course" target="new" title="Jubilee Course">
+    <area shape="rect" coords="318,880,415,958" href="https://www.standrews.com/learn/golf-academy" target="new" title="Golf Academy">
+    <area shape="poly" coords="536,1186,410,1271,420,1298,551,1213,589,1151,629,1149,659,1104,698,1091,716,1060,738,1044,754,1060,805,1002,733,1080,777,1017,838,988,873,958,878,977,691,1083,676,1110,598,1173,925,935,923,924,974,917,997,877,1044,867,962,910,911,952,1064,832,1099,836,1136,789,1166,796,1186,755,1231,746,1239,715,1283,714,1294,674,1326,674,1330,651,1355,621,1383,617,1367,577,1397,588,1414,552,1423,562" href="https://www.tripadvisor.com/Attraction_Review-g186533-d570777-Reviews-St_Andrews_West_Sands_Beach-St_Andrews_Fife_Scotland.html" target="new" title="West Sands">
+    <area shape="circle" coords="363,1198,26" href="https://www.golfdigest.com/gallery/photos-st-andrews-himalayas-putting-course" target="new" title="The Himalayas Putting Course">
+    <area shape="poly" coords="384,1345,414,1371,374,1387" href="http://blog.standrews.com/2014/06/24/a-look-inside-the-old-pavilion/" target="new" title="The Old Pavilion">
+    <area shape="circle" coords="326,1400,9" href="http://blog.standrews.com/2014/03/20/new-look-for-18th-green-shop/" target="new" title="18th Green Shop">
+    <area shape="rect" coords="323,776,340,819" href="http://www.hardies.co.uk/case-studies/the-morris-building-st-andrews" target="new" title="Morris Building">
+    <area shape="poly" coords="397,1160,415,1166,409,1157,403,1170,403,1174,403,1164" href="https://www.tripadvisor.com/Restaurant_Review-g186533-d3774382-Reviews-The_Swilcan_Lounge-St_Andrews_Fife_Scotland.html" target="new" title="The Swilcan Restuarant">
+  </map>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.rwdImageMaps.min.js"></script>
+<script>
+$(document).ready(function(e) {
+			$('img[usemap]').rwdImageMaps();
+		});
+</script>
+</body>
+</html>

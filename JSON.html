@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Watcher</title>
+
+  <link rel="stylesheet" type="text/css" href="http://www.teaching-materials.org/common/css/bootstrap.min.css">
+
+  <style type="text/css">
+  /* This puts titles always on a separate line from thumbnails */
+  #videos-list img {
+    display : block;
+  }
+  form input[type="text"] {
+
+      background-color: #ff3333;
+  }
+  input[type=text]:focus {
+      border: 3px solid #e60000;
+  }
+  input[type="submit"]:hover {
+    border: 1px solid #043668;
+    background-color: #e61300;
+    color: #000;
+  }
+  </style>
+ </head>
+ <body>
+
+<div class="container">
+
+ <div class="row">
+   <div class="col-md-12">
+    <h2 class="page-header">Best Videos Ever ❤
+
+      <div class="search-continer">
+        <form action="http://www.youtube.com/results" method="get" target="_blank" >
+          <input name="search_query" type="text" maxlength="128" />
+          <select name="search_type">
+            <option value="">Videos</option>
+            <option value="search_users">Channels</option>
+          </select>
+          <input type="submit" value="Search" />
+        </form>
+        </div>
+    </script>
+
+      <a href="https://twitter.com/share?count=none&hashtags=youtube" class="twitter-share-button"
+         data-lang="en">Tweet</a>
+      <script>!function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){
+          js     = d.createElement(s);
+          js.id  = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, "script", "twitter-wjs");</script>
+
+    </h2>
+   </div>
+ </div>
+
+ <div class="row">
+   <div class="col-md-3">
+     <ul id="videos-list">
+    </ul>
+   </div>
+   <div class="col-md-9" id="video-watcher">
+   </div>
+ </div>
+
+
+</div>
+<div style="text-align:center; margin-top: 30px; clear:both;">
+
+  <a data-pin-do="buttonPin" data-pin-round="true" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=https%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest"><img src="https://farm8.staticflickr.com/7027/6851755809_df5b2051c9_z.jpg" width="80" height="80" /></a><br>
+
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+</div>
+
+            <div style="text-align:center; margin-top: 30px; clear:both;">
+
+          <a href="https://twitter.com/intent/tweet?button_hashtag=watchbestvideosever&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #watchbestvideosever</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+
+ <script type='text/javascript' src='https://d33wubrfki0l68.cloudfront.net/bundles/fff2bbddae1163299103586a8d451e3177c29b55.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script>
+
+ function addVideoToList(video){
+   var videoLink = $('<a>');
+   videoLink.append(video.snippet.title);
+   videoLink.append('<br>');
+   var linkUrl      = videoLink.attr('href');
+   var thumbnailImg = $('<img>');
+   thumbnailImg.attr('src', video.snippet.thumbnails.default.url);
+   videoLink.append(thumbnailImg);
+
+   videoLink.on('click', function(e){
+     e.preventDefault();
+     var videoTitle = $('<h2>');
+     videoTitle.html(video.snippet.title + ' <small>' + video.snippet.channelTitle + '</small>');
+     var videoEmbed = $('<iframe></iframe>');
+     videoEmbed.attr('src', youtube.generateEmbedUrl(video.id.videoId) + '?autoplay=1');
+     videoEmbed.attr('width', 560);
+     videoEmbed.attr('height', 315);
+
+     var videoRating = $('<img></img>');
+     videoRating.attr('src', 'https://chart.googleapis.com/chart?chs=225x125&cht=gom&chd=t:' + video.rating);
+
+     var videoWatcher = $('#video-watcher');
+     videoWatcher.hide();
+     videoWatcher.empty();
+     videoWatcher.append(videoTitle);
+     videoWatcher.append(videoEmbed);
+     videoWatcher.append(videoRating);
+     videoWatcher.fadeIn();
+   });
+
+   var videoItem = $('<li>');
+   videoItem.append(videoLink);
+   $('#videos-list').append(videoItem);
+ }
+
+ var apiKey = "AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs";
+
+ $.ajax({
+   url      : "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=golf&safeSearch=moderate&type=video&videoEmbeddable=true&fields=items(id%2Csnippet)&key=" + apiKey,
+   dataType : "json",
+   success  : function(json){
+     var videos = json.items;
+     for(var i = 0; i < videos.length; i++){
+       addVideoToList(videos[i]);
+     }
+   }
+ });
+
+
+    $.getJSON('https://www.googleapis.com/youtube/v3/videospart=statistics&id=Qq7mpb-hCBY&key=AIzaSyCRXTR0G_Slvgyjj_Vgfry6KLiw8pIMlHs', function(data) {
+        console.log("viewCount: ", data.items[ 0 ].statistics.viewCount);
+    });
+
+ </script>
+ </body>
+</html>

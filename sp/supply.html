@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Michael Pavlakis ET712 Cohort 4 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifetime Supply</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="calculator">
+  <h3 class="question">Ever wonder how many cups of coffee you will drink from now, until the age of 100?</h3>
+  <h4>Enter your age and the number of cups consumed daily into the boxes provided:</h4>
+  <p>I am  <input type="text" id="myAge" class="input" placeholder="How old are you?" /> years old.</p>
+  <p>Every day I drink <input type='text' id="myCoffee" class="input" placeholder="How many cups of coffee?"/> cups of coffee.</p>
+  <h4 class="question">Hit the calculate button below to find your answer and start drinking! :)</h4>
+  <input type="button" id="myButton" value="CALCULATE" onclick="calculateSupply()" />
+  <p>You will need <input type="text" id="leftCups" class="input"/> cups of coffee to last you until the ripe old age of 100.</p>
+</div>
+<script>
+function calculateSupply(){
+  var myAge=document.getElementById('myAge').value;
+  var maxAge=100;
+  var cupsAmount= document.getElementById('myCoffee').value;
+  var totalSupply=(cupsAmount * 365) * (maxAge - myAge);
+  var result= document.getElementById('leftCups').value=totalSupply;
+}
+</script>
+<pre>
+    (  )   (   )  )
+     ) (   )  (  (
+     ( )  (    ) )
+     _____________
+    <_____________> ___
+    |             |/ _ \
+    |               | | |
+    |               |_| |
+ ___|             |\___/
+/    \___________/    \
+\_____________________/
+</pre>
+</body>
+</html>

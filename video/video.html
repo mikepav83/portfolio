@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+form input[type="text"] {
+    width: 120px;
+    background-color: #25afd4
+}
+form input[type="submit"] {
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 2px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #043668;
+}
+input[type="submit"]:hover {
+  border: 1px solid #043668;
+  background-color: #ddd;
+  color: #000;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#myBtn {
+    width: 100px;
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    background: #043668;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: #043668;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="mercedes.mp4" type="video/mp4">
+
+</video>
+
+<div class="content">
+  <h1>Just because its raining doesn't mean you have to stay indoors.</h1>
+  <p>Introducing the Mercedes Benz SL-Class. It can handle the rain in style. Alleviate your boredom. Stop by your local Mercedes Benz dealer and test drive one today. Multiple trims and options available. Contact your local Mercedes Benz dealer for details.</p>
+  <form action="https://www.mbusa.com/en/home"
+  <p>Receive the latest news, special offers and exclusives:</p>
+  <input type="text" name="email" />
+  <input type="submit" name="subscribe" value="Subscribe" />
+</form>
+
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+</body>
+</html>

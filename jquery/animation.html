@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<!--Michael Pavlakis ET712-->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>
+      Lab : JQuery Animation
+    </title>
+
+<style>
+#divv{
+width: 200px;
+height: 200px;
+position: relative; /* Box would not move with out being absolute or relative*/
+background-color: #FA6900;
+border-radius: 5px;
+text-align: center;
+}
+body {
+  font-family: 'Roboto Slab', serif;
+	background-color: #ccc;
+	color: #000;
+}
+button {
+    background-color: #0177ec; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 12px;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ec0101;
+}
+
+/*The .circle value will enable the square to change into a circle when jQ manipulates the css property*/
+.circle {
+  border-radius: 50% !important;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="../../theme.css">
+<link rel="icon" type="image/png" href="../../Images/fav2.png">
+  </head>
+
+    <body>
+
+<center>
+    <br>
+    <h1>
+            Lab : JQuery Animation
+    </h1>
+    <h3>October 31, 2018</h3>
+    <hr>
+    <br>
+
+<table width="65%">
+<tr>
+<td align="center">
+<p> Here, I will use JQuery to manipulate the CSS and make an animation to the box. Click the button to try it!</p>
+</td>
+</tr>
+</table>
+
+<div id="divv"></div>
+
+<p>Click the Buttons!</p>
+
+<hr>
+<br>
+<button onclick="move()">Move It!</button>
+<button onclick="opa()">Change Opacity!</button>
+<button onclick="cir()">Into a Circle!</button>
+<button onclick="toggl()">Back To Square!</button>
+<button onclick="siz()">Make it Bigger!!</button>
+<button onclick="norm()">Revert Size!</button>
+<button onclick="colr()">Rainbow!</button>
+<button onclick="craz()">Lets Get CRAZY!!!</button>
+<button id="bounce">Bounce!!</button>
+<button onclick="stop1()">Stop All!</button>
+<button onclick="stop2()">Stop But Finish!</button>
+<button onclick="reload()">Reload!</button>
+
+</center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
+<script>
+
+//This will move it 100 pixels in fast motion
+function move(){
+       $("#divv").animate({left:'100px'});
+
+   };
+
+//This will change the opacity move it 300 pixels as well as decreasing the original height and width at the same time
+function opa(){
+     $("#divv").animate({
+                left: '300px',
+                 opacity: '0.5',
+                 height: '150px',
+                 width: '150px'});
+       };
+
+// //Change the square into a
+function cir() {
+     $("#divv").addClass('circle');
+       };
+
+//Changes the circle back into a square regardless of size
+function toggl() {
+       $("#divv").removeClass("circle", 1000, "easeInBack");
+           };
+
+//This will make it larger everytime the button is clicked
+function siz(){
+      $("#divv").animate({left: '250px',
+                          height: '+=150px',
+                          width: '+=150px'});
+           };
+
+//Click twice to switch between opacity and size
+           function norm() {
+                   if ($('#divv').width() < 225) {
+                       $("#divv").animate({
+                          opacity: .3,
+                          width: "225px",
+                          height: "225px"
+                          }, 450);
+                  } else {
+                       $("#divv").animate({
+                          opacity: 1,
+                          width: "200px",
+                          height: "200px"
+                         }, 450)
+                 }
+           };
+
+//Changes the colors then reverts back to the original color
+           function colr(){
+           $("#divv").animate({
+                	backgroundColor: "#000000"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#705435"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#00ffff"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#0000ff"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#008080"
+           }, 2000 );
+           $("#divv").animate({
+                 	backgroundColor: "#10a521"
+           }, 2000 );
+           $("#divv").animate({
+                 	backgroundColor: "#f2de2e"
+           }, 2000 );
+           $("#divv").animate({
+                	backgroundColor: "#932ef2"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#f22ec7"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#ff0000"
+           }, 2000 );
+           $("#divv").animate({
+                  backgroundColor: "#FA6900"
+          }, 2000 );
+           };
+
+
+
+//This will change the shape in fast motion
+function craz(){
+var div = $("div");
+div.animate({height: '600px', opacity: '0.4'}, "fast");
+div.animate({width: '600px', opacity: '0.8'}, "fast");
+div.animate({height: '200px', opacity: '0.4'}, "fast");
+div.animate({width: '200px', opacity: '0.8'}, "fast");
+};
+
+
+//Make it bounce on click. This will make it bounce continuosly until Stop All! button is pressed. Colors and other functions will continue to work.
+$("#bounce").click(function (){
+animateDiv();
+
+});
+
+function makeNewPosition(){
+// Get viewport dimensions (remove the dimension of the div)
+var h = $(window).height() - 40;
+var w = $(window).width() - 40;
+
+var nh = Math.floor(Math.random() * h);
+var nw = Math.floor(Math.random() * w);
+return [nh,nw];
+};
+ function animateDiv(){
+ var newq = makeNewPosition();
+ var oldq = $('#divv').offset();
+ var speed = calcSpeed([oldq.top, oldq.bottom], newq);
+
+$('#divv').animate({ top: newq[0], bottom: newq[1] }, speed, function(){
+      animateDiv();
+});
+ };
+ function calcSpeed(prev, next) {
+ var x = Math.abs(prev[1] - next[1]);
+ var y = Math.abs(prev[0] - next[0]);
+ var greatest = x > y ? x : y;
+ var speedModifier = 0.5;
+ var speed = Math.ceil(greatest/speedModifier);
+
+ return speed;
+
+};
+//Freezes all animation into position
+function stop1(){
+$("#divv").stop(true);
+ };
+//Freezes all animations and gets to the next animation
+ function stop2(){
+ $("#divv").stop(true, true);
+  };
+
+//Moves back into the original starting position.
+function reload(){
+      location.reload();
+  };
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="https://use.fontawesome.com/5e8da2cb31.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="shortcut icon" href="img/android-chrome.png">
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">&trie;</button>
+  <header>
+    <a href="#" class="logo">Michael Pavlakis</a>
+    <section>
+    <nav>
+       <ul>
+         <li><a href="index.html">Home</a></li>
+          <li><a href="Aboutme.html">About</a></li>
+           <li><a href="ET-712.html">ET-712</a></li>
+           <li><a href="ET-710.html">ET-710</a></li>
+           <li><a href="Contact.html">Contact</a></li>
+       </ul>
+    </nav>
+  </section>
+  </header>
+<section class="main">
+   <div class="container2">
+     <h1>Front-End Web Developer &<br> Computer Technician</h1>
+     <!--<p>Front-End Web Developer,<br> Computer Technician</p>-->
+   </div>
+</section>
+
+<div style="padding:20px;">
+<p>Hello and welcome to my portfolio page! My name is Michael Pavlakis. I am an aspiring front-end developer from Queens, NY. Below you will find samples of some of the work I have done this year. If you want to see more please click on the ET-712 and ET-710 links. </p>
+<p>Planning on doing more advanced projects as time goes on and hope to one day, become a professional web developer. Thank you for viewing my portfolio and hoped you gained some measure of inspiration from it.</p>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="tips/TipCalculator.html">
+      <img src="img/ss2.png" alt="Tip" width="600" height="400">
+    </a>
+    <div class="desc">Tip Calculator</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="ImageSwap/index.html">
+      <img src="img/ss3.png" alt="Skyline" width="600" height="400">
+    </a>
+    <div class="desc">Magnificent Views of New York Skylines</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="jquery/animation.html">
+      <img src="img/ss1.png" alt="Animation" width="600" height="400">
+    </a>
+    <div class="desc">Fun With jQuery Animation</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="marquee/marquee.html">
+      <img src="img/ss5.png" alt="Independence" width="600" height="400">
+    </a>
+    <div class="desc">Tribute to the Birth of America</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:20px;">
+  <p></p>
+  <p></p>
+</div>
+
+
+<footer>
+   <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="Aboutme.html">About</a></li>
+     <li><a href="ET-712.html">ET-712</a></li>
+     <li><a href="ET-710.html">ET-710</a></li>
+     <li><a href="Contact.html">contact</a></li>
+   </ul>
+
+   <div class="footer-sm">
+      <ul>
+        <li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.reddit.com/"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a></li>
+        <li><a href="https://github.com/"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+        <li><a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.deviantart.com/"><i class="fa fa-deviantart" aria-hidden="true"></i></a></li>
+      </ul>
+   </div>
+</footer>
+</div>
+<script>
+// When the user scrolls down 30px from the top of the document, show the nav top button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>

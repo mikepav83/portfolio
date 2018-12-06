@@ -1,0 +1,48 @@
+html {
+  background: url('../img/coffee.jpeg'); no repeat center fixed;
+  background-size: cover;
+}
+body {
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.calculator {
+  border: 3px solid #965a10;
+  background-color:#ccc;
+  padding: 10px;
+  width: 800px;
+  height: 100%;
+  margin: auto;
+}
+.input {
+  background-color: #07ffea;
+  border: 1px solid #302813;
+  width: 150px;
+  text-align: center;
+}
+.input:focus {
+  background-color: #75d7ff;
+  border: 3px solid;
+}
+.question {
+  text-align: center;
+}
+#myButton {
+ background-color: #c1863e;
+ border: 2px solid black;
+ width: 100px;
+ height: 40px;
+ margin-left: 40%;
+ margin-right: 40%;
+}
+#myButton:hover {
+    background-color: #72522b;
+    cursor: pointer;
+}
+pre {
+  float: left;
+
+  padding: 1em;
+  position: relative;
+}
